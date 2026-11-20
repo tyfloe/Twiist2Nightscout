@@ -8,11 +8,12 @@ Polls Tidepool (where twiist data lands once your My twiist Portal is linked) an
 
 ## Setup
 ## You will need:
-Docker Desktop installed and running.
-A Nightscout site, plus its API secret (or an access token).
-At least one data source:
-twiist: a Tidepool account with their My twiist Portal linked to it (app.tidepool.org, then Connect a Device Account, then twiist).
-Eversense: a follower account that the sensor wearer has shared with, and an invite they’ve accepted.
+-Docker Desktop installed and running.
+
+-A Nightscout site, plus its API secret (or an access token).
+-At least one data source:
+  twiist: a Tidepool account with their My twiist Portal linked to it (app.tidepool.org, then Connect a Device Account, then twiist).
+  Eversense: a follower account that the sensor wearer has shared with, and an invite they’ve accepted.
 
 ## Setup continued:
 
