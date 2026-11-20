@@ -1,0 +1,10 @@
+services:
+  ttn:
+    build: .
+    container_name: twiist-to-nightscout
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ttn-data:/data
+volumes:
+  ttn-data:
