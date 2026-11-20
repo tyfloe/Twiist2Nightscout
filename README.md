@@ -7,22 +7,20 @@ Polls Tidepool (where twiist data lands once your My twiist Portal is linked) an
 - Basal changes (automated, temp, scheduled, suspend) -> `treatments` (Temp Basal)
 
 ## Setup
-1. Link your My twiist Portal account to Tidepool (app.tidepool.org -> Connect a Device Account -> twiist).
-2. `cp .env.example .env` and fill it in.
-3. `docker compose up -d --build` then `docker compose logs -f`.
+## You will need:
 Docker Desktop installed and running.
 A Nightscout site, plus its API secret (or an access token).
 At least one data source:
 twiist: a Tidepool account with their My twiist Portal linked to it (app.tidepool.org, then Connect a Device Account, then twiist).
 Eversense: a follower account that the sensor wearer has shared with, and an invite they’ve accepted.
 
-Setup
+## Setup continued:
 
 Copy .env.example to .env.
 Fill in the Nightscout section: NIGHTSCOUT_URL, and either NIGHTSCOUT_API_SECRET or NIGHTSCOUT_TOKEN.
 For twiist, fill in TIDEPOOL_USER and TIDEPOOL_PASSWORD. Add TIDEPOOL_USER_ID only if they’re reading a shared account that isn’t their own.
-For Eversense, fill in EVERSENSE_USER, EVERSENSE_PASSWORD, EVERSENSE_CLIENT_SECRET and EVERSENSE_REGION (US or OUS). They must get the client secret themselves, as you did. If it contains a $, wrap it in single quotes. Leave these lines commented out to disable Eversense.
-Optionally set POLL_SECONDS (default 300) and BACKFILL_HOURS (default 24, only applies on the first run).
+For Eversense, fill in EVERSENSE_USER, EVERSENSE_PASSWORD, and EVERSENSE_REGION (US or OUS).
+Optionally set POLL_SECONDS (default 120) and BACKFILL_HOURS (default 24, only applies on the first run).
 From the project folder, run docker compose up -d --build.
 Run docker compose logs -f and look for “Uploaded N ...” lines, then check that readings appear in Nightscout.
 
@@ -31,7 +29,7 @@ Run tests: `python -m unittest discover -s tests`.
 
 ## Notes
 - Data is only as fresh as twiist's sync to Tidepool, so expect a delay versus the twiist app.
-- Tidepool is moving to a newer login system; if password login stops working, the auth in `Tidepool.login` needs updating.
+- Tidepool is moving to a newer login system; if password login stops working, it will be updated in the future.
 - If Nightscout is on your LAN from Docker Desktop, use `http://host.docker.internal:PORT` for localhost.
 
 ## Eversense follower (EXPERIMENTAL)
