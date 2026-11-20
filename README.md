@@ -18,10 +18,15 @@ Eversense: a follower account that the sensor wearer has shared with, and an inv
 
 Copy .env.example to .env.
 Fill in the Nightscout section: NIGHTSCOUT_URL, and either NIGHTSCOUT_API_SECRET or NIGHTSCOUT_TOKEN.
+
 For twiist, fill in TIDEPOOL_USER and TIDEPOOL_PASSWORD. Add TIDEPOOL_USER_ID only if they’re reading a shared account that isn’t their own.
+
 For Eversense, fill in EVERSENSE_USER, EVERSENSE_PASSWORD, and EVERSENSE_REGION (US or OUS).
+
 Optionally set POLL_SECONDS (default 120) and BACKFILL_HOURS (default 24, only applies on the first run).
+
 From the project folder, run docker compose up -d --build.
+
 Run docker compose logs -f and look for “Uploaded N ...” lines, then check that readings appear in Nightscout.
 
 State (last uploaded timestamps) lives in the `ttn-data` volume, so restarts don't re-upload.
