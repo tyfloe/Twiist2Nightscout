@@ -24,9 +24,7 @@ Reads a followed Eversense sensor from the Eversense NOW cloud (the same service
 This is an unofficial, reverse-engineered API; it can break or be blocked at any time, and I have not tested it against a live account.
 
 1. In Eversense, share the sensor wearer's data with a follower account (Eversense NOW), accept the invite.
-2. In `.env` set `EVERSENSE_USER`, `EVERSENSE_PASSWORD` (the follower login) and `EVERSENSE_CLIENT_SECRET`.
-   The client secret is the Eversense app's own embedded value; this project doesn't ship it. It is defined in the open-source
-   Nocturne connector (`EversenseConstants.cs` in github.com/nightscout/nocturne).
+2. In `.env` set `EVERSENSE_USER`, `EVERSENSE_PASSWORD` (the follower login).
 3. `EVERSENSE_REGION` is `US` or `OUS`.
 
 If the sensor is paired with twiist and already arrives via Tidepool, don't enable this too (duplicate readings).
